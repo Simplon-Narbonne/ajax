@@ -1,0 +1,52 @@
+<html>
+
+<head>
+<script src="jquery-2.2.1.min.js"></script>
+
+</head>
+
+
+<body>
+test
+<script>
+$(document).ready(function() {
+    console.log('ici');
+});
+
+$( document ).ready(function() {
+    console.log( "ready!" );
+	$.ajax({
+    		url: "http://iness.simplon.co/wp-json/wp/v2/pages/39",
+    		context: document.body
+    	})
+      .done(function() {
+    		console.log('Resultat de la page 39 obtenu avec succes');
+	    });
+
+    $.ajax({
+      		url: "http://iness.simplon.co/wp-json/wp/v2/pages/",
+      		context: document.body
+      	})
+        .done(function() {
+      		console.log('Resultat de toutes les pages du site obtenu avec succes');
+  	    });
+
+/*
+    console.log( "ready 3eme requete vers sortez plus!" );
+	$.ajax({
+    		url: "http://www.sortezplus.fr/",
+		context: document.body
+	}).done(function() {
+		console.log('donnnnnne');
+	});
+*/
+});
+
+
+
+</script>
+
+</body>
+
+
+</html>
